@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p>index</p>
+		<h1>Hi, {{ user_id }}</h1> |<a href="/AddAddress/{{user_id }}">Add New Address</a>
+		<table>
+			<tr>
+				<th>Street</th>
+				<th>Pin</th>
+				<th>Country</th>
+				<th>State</th>
+				<th>Phone</th>
+			</tr>
+			{% for address in addresses %}
+				<tr>
+					<td>{{ address.street }}</td>
+					<td>{{ address.pincode }}</td>
+					<td>{{ address.country }}</td>
+					<td>{{ address.state }}</td>
+					<td>{{ address.phone }}</td>
+					<td>
+						<form method="post" action="/update/{{ address.id }}/{{ address.user_id }}" enctype="multipart/form-data">
+							<input type="hidden" value="{{ address.id }}">
+							<input type="hidden" value="{{address.user_id }}">
+							<input type="submit" value="update">
+							</form>
+					</td>
+
+				</tr>
+
+			{% endfor %}
+		</table>
+	
+</body>
+<style>
+	th,td{
+		border:1px solid;
+	}
+	table{
+		border-collapse: collapse;
+	}
+</style>
+</html>

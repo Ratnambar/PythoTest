@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h2>Update Address</h2>
+	{% for result in results %}
+	<form method="post" action="/ChangeAddress/{{ result.id }}" enctype="multipart/form-data">
+		
+			<input type="hidden" name="street" value={{ result.id }}><br>
+			<input type="text" name="street" value={{result.street}}><br>
+			<input type="text" name="pincode" value={{result.pincode}}><br>
+			<input type="text" name="country" value={{result.country}}><br>
+			<input type="text" name="state" value={{result.state}}><br>
+			<input type="text" name="phone" value={{result.phone}}><br>
+		
+		<input type="submit" name="submit" value="updateAddress">
+		
+	</form>{% endfor %}
+
+</body>
+</html>

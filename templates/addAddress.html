@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+	<form method="post" action="/SaveNewAddress/{{id}}" enctype="multipart/form-data">
+		
+			Street:<input type="text" name="street" ><br>
+			Pincode:<input type="text" name="pincode"><br>
+			Country:<input type="text" name="country" ><br>
+			State:<input type="text" name="state" ><br>
+			Phone:<input type="text" name="phone" ><br>
+		
+		<input type="submit" name="submit" value="updateAddress">
+		
+	</form>
+</body>
+</html>
